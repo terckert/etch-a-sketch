@@ -29,7 +29,6 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 3px;
 }
 
 /* Options menu styling */
@@ -156,6 +155,7 @@ footer {
     gap: 5px;
     align-items: center;
     justify-content: center;
+    padding-top: 3px;
 }
 
 img {
