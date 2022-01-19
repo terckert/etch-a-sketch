@@ -29,6 +29,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 3px;
 }
 
 /* Options menu styling */
