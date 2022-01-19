@@ -14,12 +14,23 @@
     </header>
     <main id="main">
         <div id="drawOptions">
+            <div class="color-wrapper">
+                <input id='colorPicker' type='color' value='black' onchange="changeColor()">
+            </div>
             <button id='outline' onclick="changeOutline()">Outline</button>
             <button id="reset" onclick="resetPixels()">Clear</button>
+            <div id="slider">
+                <p id="sliderSize">16 x 16</p>
+                <input type="range" min='4' max='48' value = '16' id='gridSize' onchange="sliderUpdate()">
+            </div>
         </div>
         <div id="etchWindow" class='unselectable'>
             <!-- Pixels will be added on load or size change -->
-        </div> <!--etchWidnow-->
+        </div>
+        <footer>
+            <p> Made by Timothy Erckert</p>
+
+        </footer>
     </main>
 </body>
 </html>

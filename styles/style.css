@@ -3,9 +3,9 @@
     --fill-color: black;
     --default-fill-color: white;
     /* Page colors */
-    --background-color: #06a2cb;
+    --background-color: #f8f1f1;
     /* Button stuff */
-    --default-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --default-font: sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ header {
     font-weight: bold;
     text-align: center;
     padding: 5px 0;
-    text-shadow: 1px 1px 0px yellow;
+    text-shadow: 0px 0px 4px rgb(141, 135, 135);
 }
 
 
@@ -30,26 +30,70 @@ header {
     max-height: 500px
 }
 
+/* Options menu styling */
 #drawOptions {
+    width: 80px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px
+    gap: 10px;
+}
+
+#colorPicker, .color-wrapper, button {
+    height: 80px;
+    width: 80px;
+}
+
+.color-wrapper {
+    border-radius: 50%;
+    background-color: var(--fill-color);
+    box-shadow: 0px 0px 6px black;
+}
+
+#colorPicker {
+    opacity: 0;
 }
 
 button {
-    height: 5em;
-    width: 5em;
     border-radius: 50%;
-    padding: 50% 30%;
-    border: solid;
+    border: 1px none;
+    box-shadow: 0px 0px 6px black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--default-font);
+    font-size: 16px;
+    background-color: var(--background-color);
 }
 
+#slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+#sliderSize {
+    margin: 0;
+    font-family: var(--default-font);
+    
+}
+
+#gridSize {
+    width: 100%;
+    -webkit-appearance: none;
+    background: var(--default-fill-color);
+    height: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px black;
+}
+
+/* Draw window styling */
+
+/* Prevents the user from dragging. Fixes issues with prolonged mousedown */
 .unselectable {
     -webkit-user-select: none; /* Safari, Chrome */
     -khtml-user-select: none; /* Konqueror */
@@ -63,6 +107,7 @@ button {
     height: 40vw;
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 0px 10px black;
 }
 
 .row {
@@ -79,6 +124,7 @@ button {
     -webkit-user-drag: none;
 }
 
+/* Class to be added and removed to remove window grid */
 .hide-outline {
     outline: none;
 }

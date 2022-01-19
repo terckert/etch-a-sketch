@@ -34,7 +34,8 @@ function createPixel() {
 }
 
 let draw = false;       // Boolean dicates when pixels should be changed on mouseover 
-
+// Color we draw in. Starts with the default value black.
+let drawColor = document.querySelector('#colorPicker').value;
 
 // Changes background to current color when moused over
 function changeBackground(e) {
@@ -44,11 +45,9 @@ function changeBackground(e) {
     }
     // Gets the pixed that was pinged by the event
     const pixel = e.target;
-    // Gets the value of the background color and stores it in a local variable
-    const bg = getComputedStyle(document.documentElement)
-                .getPropertyValue('--fill-color');
+
     // Changes pixel background color
-    pixel.style.backgroundColor = bg;
+    pixel.style.backgroundColor = drawColor;
     e.stopPropagation();
 }
 
@@ -75,4 +74,20 @@ function changeOutline() {
             element.classList.add('hide-outline');
         });
     }
+}
+
+function sliderUpdate() {
+    const sliderSize = document.querySelector('#sliderSize');
+    const gridSize = document.querySelector('#gridSize').value;
+    sliderSize.innerText = `${gridSize} x ${gridSize}`;
+    drawWindow.innerHTML = '';
+    drawPixels(gridSize);
+}
+
+function changeColor() {
+    // Update the brush color
+    drawColor = document.querySelector('#colorPicker').value;
+    // Update the color selector wrapper
+    const btnClr = document.querySelector('.color-wrapper');
+    btnClr.style.backgroundColor = drawColor;
 }
